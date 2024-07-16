@@ -9,6 +9,7 @@ import CartPage from './pages/CartPage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import './App.css';
+import './style.css';
 
 const App = () => {
     return (
