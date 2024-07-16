@@ -9,3 +9,5 @@ logs/
 
 # Build artifacts (if applicable)
 dist/
+node_modules/
+.env
