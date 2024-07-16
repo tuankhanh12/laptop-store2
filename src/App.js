@@ -1,33 +1,30 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import LaptopDetailPage from './pages/LaptopDetailPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import CartPage from './pages/CartPage';
-import AuthContextProvider from './contexts/AuthContext';
-import LaptopContextProvider from './contexts/LaptopContext';
-import CartContextProvider from './contexts/CartContext';
+import ContactPage from './pages/ContactPage';
+import AboutPage from './pages/AboutPage';
 import './App.css';
 
-function App() {
-  return (
-    <AuthContextProvider>
-      <LaptopContextProvider>
-        <CartContextProvider>
-          <Navbar />
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/laptop/:id" component={LaptopDetailPage} />
-            <Route path="/login" component={LoginPage} />
-            <Route path="/register" component={RegisterPage} />
-            <Route path="/cart" component={CartPage} />
-          </Switch>
-        </CartContextProvider>
-      </LaptopContextProvider>
-    </AuthContextProvider>
-  );
-}
+const App = () => {
+    return (
+        <Router>
+            <Navbar />
+            <Switch>
+                <Route path="/" exact component={HomePage} />
+                <Route path="/laptop/:id" component={LaptopDetailPage} />
+                <Route path="/login" component={LoginPage} />
+                <Route path="/register" component={RegisterPage} />
+                <Route path="/cart" component={CartPage} />
+                <Route path="/contact" component={ContactPage} />
+                <Route path="/about" component={AboutPage} />
+            </Switch>
+        </Router>
+    );
+};
 
 export default App;
